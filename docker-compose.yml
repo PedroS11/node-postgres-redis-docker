@@ -1,0 +1,27 @@
+version: "2"
+services:
+  api:
+    container_name: api
+    build: .
+    command: ["./wait-for-it.sh", "database:5432", "--", "npm", "start"]
+    depends_on:
+      - database
+    links:
+      - database
+    ports:
+      - "3000:3000"
+    environment:
+      - DB_HOST=database
+    volumes:
+      - ./:/usr/app/
+      - /usr/app/node_modules
+    restart: on-failure
+
+  database:
+    build: ./database
+    container_name: database
+    image: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./database:/var/lib/postgresql/data

@@ -1,0 +1,3 @@
+CREATE DATABASE thesis_api;
+CREATE USER db_user WITH PASSWORD 'admin';
+GRANT ALL PRIVILEGES ON DATABASE thesis_api to db_user;
