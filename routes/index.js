@@ -1,13 +1,40 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 const { knex } = require('../config.js')
+const redis = require("redis")
+const client = redis.createClient(6379, process.env.REDIS_HOST);
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
-  knex.select().table('patient').then(rows => {
-    res.send(rows[0])
+  const values = []
+
+  client.hgetall('values', function (err, obj) {
+    if (err) {
+      console.log('Error ' + err)
+      res.send(err)
+    } else {
+      console.dir(obj)
+      if (obj) {
+        values.push(obj.test)
+      }
+      res.send(values)
+    }
   })
-    .catch(err => {throw err})
 });
+
+router.get('/patient', (req, res, next) => {
+  knex.select().table('patient').then(rows => {
+      res.send(rows[0])
+    })
+      .catch(err => {throw err})
+})
+
+router.post('/redis', function (req, res) {
+
+
+  client.hmset('values', { 'test':'t' })
+
+  // redis integration
+  res.redirect('/')
+})
 
 module.exports = router;
