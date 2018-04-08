@@ -36,8 +36,6 @@ GET / Returns the the previous key
 
 > exit
 
-An error will prompt, just ignore it.
-
 Run again 
 > docker-compose up
 
