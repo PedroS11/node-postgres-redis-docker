@@ -1,6 +1,6 @@
-#Starter kit with NodeJs, PostgreSQL and Redis in Docker containers
+# Starter kit with NodeJs, PostgreSQL and Redis in Docker containers
 
-##Usage
+## Usage
 > git clone https://github.com/PedroS11/node-postgres-redis-docker
 
 > cd node-postgres-redis-docker
