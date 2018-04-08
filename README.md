@@ -32,6 +32,7 @@ GET / Returns the the previous key
 
 ## Recreate the database
 > docker-compose run database bash
+
 > rm -rf /var/lib/postgres/data
 
 > exit
