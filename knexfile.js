@@ -7,7 +7,7 @@ module.exports = {
 			host : process.env.DB_HOST,
 			user : 'db_user',
 			password : 'admin',
-			database : 'thesis_api'
+			database : 'db'
 		},
 		pool: {
 			min: 2,

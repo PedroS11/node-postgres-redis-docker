@@ -27,8 +27,7 @@ GET / Returns the the previous key
 
 > npm run lint
 
-* Knex, for Query Building
-
+* Knex, for Query Building, migration and seed
 
 ## Recreate the database
 > docker-compose run database bash
