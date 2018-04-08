@@ -21,7 +21,14 @@ POST /redis stores a key in a Redis session
 
 GET / Returns the the previous key
 
-It has Eslint included with a command to fix the issues
+## Features
+
+* Eslint, including a command to fix the issues
+
+> npm run lint
+
+* Knex, for Query Building
+
 
 ## Recreate the database
 > docker-compose run database bash
