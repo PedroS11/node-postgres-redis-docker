@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www ",
-    "knex": "./node_modules/.bin/knex"
+    "knex": "./node_modules/.bin/knex",
+    "lint": "./node_modules/.bin/eslint --fix ."
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
@@ -17,5 +18,8 @@
     "pg-promise": "^8.2.2",
     "pug": "2.0.0-beta11",
     "redis": "^2.8.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1"
   }
 }
