@@ -2,7 +2,7 @@ version: "2"
 services:
   api:
     container_name: api
-    build: .
+    build: ./api
     command: ["./wait-for-it.sh", "database:5432", "--", "npm", "start"]
     depends_on:
       - database
@@ -14,7 +14,7 @@ services:
       - DB_HOST=database
       - REDIS_HOST=redis
     volumes:
-      - ./:/usr/app/
+      - ./api:/usr/app/
       - /usr/app/node_modules
     restart: on-failure
 
